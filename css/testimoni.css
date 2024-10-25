@@ -1,0 +1,145 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
+body {
+  margin: 0;
+  padding: 0;
+}
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.image-nav {
+  height: 35px;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.contact-list {
+  margin-top: 3%;
+
+  margin-bottom: 2%;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  float: left;
+  margin-right: 10px;
+}
+
+.responsive-button {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.responsive-container {
+  background-color: white;
+}
+
+.responsive-container-item {
+  width: 100%;
+
+  text-align: center;
+}
+
+.container {
+  gap: 5px;
+  margin-top: 45% !important;
+
+}
+.card {
+ 
+  height: 250px;
+  width: 300px;
+}
+.btn {
+  background-color: black;
+  color: white;
+  /* width: 100px;
+  height: 35px; */
+  padding: 10px 15px;
+  border-radius: 30px;
+}
+img {
+  margin: 0px;
+  width: 100%;
+  border-radius: 25px 25px 0px 0px;
+}
+.text-card {
+  
+  margin-left: 45px;
+}
+.top-container{
+  
+  height: 150px;
+  width: 1500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  
+}
+.button-option{
+  margin-right: 15px;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+  padding: 20px 25px;
+  font-size: larger;
+}
+@media screen and (max-width: 600px) {
+  .nav-link {
+    display: none;
+  }
+
+  .responsive-button {
+    display: block;
+  }
+
+  .card-review {
+    text-align: left;
+    
+    height: 450px;
+    width: 80%;
+  }
+  .text-card {
+    text-align: left;
+    margin-left: 10px;
+  }
+
+  .top-container{
+    margin-top: 100px;
+    width: 100%;
+  }
+  .button-option{
+    padding: 5px 10px;
+    margin-right: 10px;
+  }
+  .container {
+    margin-top: 90%;
+    padding-bottom: 25px;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    border: none;
+    width: 100%;
+    gap: 0px;
+    
+  }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/project.css">
+    <title>Project</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-brand">
+        <img class="image-nav" src="./assets/dw-favicon-final.png" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item poppins-bold">
+            <a href="project.html" class="nav-link active">
+              Project
+            </a>
+          </li>
+          <li class="nav-item poppins-bold">
+            <a href="review.html" class="nav-link active">
+              Testimoni
+            </a>
+          </li>
+        
+        </ul>
+        <div class="d-flex poppins-bold" role="search">
+          <a href="form.html">
+            <button class="btn btn-light">Contact</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+    
+    <div class="container">
+        <form action="" onsubmit="createProject(event)">
+            <div class="poppins-bold">
+                <label class="form-label">Name :</label>
+                <input class="form-control" type="text" id="name" required>
+            </div>
+            <div class="d-flex flex-column">
+                <div class="poppins-bold ">
+                    <label class="form-label">Date End:</label>
+                    <input class="form-control" type="date" id="date-start" required>
+                </div>
+                <div class="poppins-bold">
+                    <label class="form-label">Date end:</label>
+                    <input class="form-control" type="date" id="date-end" required>
+                </div>
+            </div>
+            <div class="poppins-bold">
+                <label>Description :</label>
+                <textarea class="form-control" id="desc" required></textarea>
+            </div>
+            <div class="poppins-bold tech-list">
+                <label class="form-label">Technologies :</label>
+                <div>
+                    <div style="display: flex;">
+                        <input type="checkbox" id="node-js" name="node-js" class="tech" value="Node JS">
+                        <label style="margin-right: 25%;" for="node-js"> Node JS</label>
+                        <input type="checkbox" id="next-js" name="next-js" class="tech" value="Next JS">
+                        <label  for="next-js"> Next JS</label>
+                  
+                    </div>
+                    <div style="display: flex;">
+                        <input type="checkbox" id="react-js" name="react-js" class="tech" value="React JS">
+                        <label style="margin-right: 25%;" for="react-js"> React JS</label>
+                        <input type="checkbox" id="typescript" name="typescript" class="tech" value="TypeScript">
+                        <label for="typescript"> TypeScript</label>
+                    </div>
+                </div>
+               <div style="margin-top: 10px;">
+                <input type="file"  accept="image/gif, image/jpeg, image/png" name="image" id="file">
+               </div>
+                
+            </div>
+            
+            <div class="poppins-bold" >
+                <button class="btn btn-dark poppins-bold"id="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="content">
+        <!-- <div class="container-card">
+            <div class="picture">
+                <img class="image" src="./assets/IMG_2039.jpg">
+                
+            </div>
+            <div class="detail">
+                <h1 class="poppins-bold"><a href="#" style="text-decoration-line: none; color: black;"> Hi, Welcome!</a></h1>
+                <p class="date-info poppins-medium">this is date | author : Yudis Aqsha</p>
+                <p class="textintro poppins-medium">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus dignissim nisl sed rhoncus.....
+                </p>
+                <p class="tech-used poppins-bold">This is tech</p>
+                    <button class="btn-action poppins-medium">Edit</button>
+                    <button class="btn-action poppins-medium" href="#">Delete</button>
+                
+            
+            </div>
+    </div> -->
+    
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/nav.js"></script>
+    <script src="./js/project.js"></script>
+    
+</body>
+</html>

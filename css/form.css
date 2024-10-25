@@ -1,0 +1,131 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.contact-list{
+    margin-top: 3%;
+    
+    margin-bottom: 2%;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    float: left;
+    margin-right: 10px;
+}
+
+  .responsive-button {
+    display: none;
+  }
+  
+  .hide {
+    display: none;
+  }
+  .responsive-button{
+    display: none;
+  }
+  .responsive-container {
+    background-color: white;
+    
+  }
+  
+  .image-nav{
+    width: 35px;
+  }
+  .responsive-container-item {
+    width: 100%;
+    background-color: white;
+    margin-top: 0px;
+    text-align: center;
+  }
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+li{
+    float: left;
+    margin-right: 10px;
+}
+
+/* .container{
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    margin: auto;
+    margin-top: 100px;
+    width: 1000px;
+    height: 850px;
+    box-shadow: 5px 5px 5px 5px #8f9194;
+
+} */
+
+.container{
+    
+    width: 800px !important;
+}
+
+body{
+    background-color: #b3b7c9;
+}
+
+
+button{
+    padding: 15px; 
+    border-radius: 15px; 
+    font-size: medium;
+}
+form{
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* textarea{
+    font-size: x-large;
+    padding-left: 15px;
+    height: 100px;
+    width: 100%;
+} */
+
+
+@media screen and (max-width:600px) {
+    .nav-link {
+        display: none;
+      }
+    
+    .responsive-button {
+        display: block;
+    }
+    .container{
+        width: 80%;
+        
+        margin-top: 25%;
+        margin-bottom: 25px
+    }
+    form{
+        width: 80%;
+    }
+}
