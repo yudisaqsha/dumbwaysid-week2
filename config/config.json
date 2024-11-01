@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "default",
-    "password": "5CiEKtQOsU3y",
-    "database": "verceldb",
-    "host": "ep-quiet-art-a107rgnb-pooler.ap-southeast-1.aws.neon.tech",
+    "username": "postgres",
+    "password": "password",
+    "database": "project_data",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
