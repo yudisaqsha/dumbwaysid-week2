@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "password",
-    "database": "project_data",
-    "host": "localhost",
+    "username": "postgres.mnofclczpufdtrznjfjx",
+    "password": "AJWdawTE0ehje5CQ",
+    "database": "postgres",
+    "host": "aws-0-ap-southeast-1.pooler.supabase.com",
     "dialect": "postgres"
   },
   "test": {
