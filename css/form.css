@@ -2,6 +2,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #b3b7c9 !important;
 }
 
 .lato-bold {
@@ -85,6 +86,11 @@ li{
 .container{
     
     width: 800px !important;
+    background-color: white !important;
+    margin-top: 150px !important;
+    border-radius: 30px;
+    height: 800px;
+    padding: 40px 25px !important;
 }
 
 body{
@@ -120,10 +126,10 @@ form{
         display: block;
     }
     .container{
-        width: 80%;
+        width: 100% !important;
         
-        margin-top: 25%;
-        margin-bottom: 25px
+        margin-top: 50px !important;
+        margin-bottom: 75px !important;
     }
     form{
         width: 80%;

@@ -162,6 +162,13 @@ h2{
     width: 1000px;
 }
 
+.button-list{
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    flex-wrap: wrap;
+}
+
 
 @media screen and (max-width : 600px){
     .nav-link {
@@ -172,7 +179,7 @@ h2{
         display: block;
     }
     .container{
-        width: 80%;
+        width: 100%;
     }
     form{
         width: 75%;
@@ -186,6 +193,7 @@ h2{
     } */
     .container-card{
         width: 80%;
+        height: 1000px;
         flex-direction: column;
         text-wrap: wrap;
         padding-bottom: 25px;
@@ -201,8 +209,10 @@ h2{
         margin: auto;
         width: 100%;
     }
-    .tech-list{
-        width: 80%;
+    .tech-list > div > div{
+      flex-wrap: wrap;
+      gap: 0px;
+     
     }
    
 }

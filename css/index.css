@@ -82,12 +82,13 @@ h2{
 } */
 .container{
     background-color: white !important;
-    border-radius: 10px;
-    padding: 40px 15px 40px 15px !important;
+    border-radius: 30px;
+   
+    padding: 50px 25px 50px 25px !important;
 }
 
 body{
-    background-color: #8f9194 !important;
+    background-color: #b3b7c9 !important;
 }
 
 .image-nav{
@@ -166,7 +167,7 @@ ul{
     .container{
         margin-top: 12%;
         flex-direction: column;
-        width: 100%;
+        width: 100% !important;
         height: auto;
     
     }

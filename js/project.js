@@ -1,31 +1,7 @@
-const listProject = [
-    {
-        name : 'This is a new project',
-        datestart : '2024/11/30',
-        dateend : `2025/12/25`,
-        datachoosen : ['Node JS', 'ReactJS'],
-        datadesc : 'Hellow Guys',
-        imgData : './assets/IMG_2043.JPG',
-    },
-    {
-        name : 'This is a new project',
-        datestart : '2024/11/30',
-        dateend : `2024/12/25`,
-        datachoosen : ['Node JS', 'ReactJS'],
-        datadesc : 'Hellow Guys',
-        imgData : './assets/IMG_2043.JPG',
-    },
-    {
-        name : 'This is a new project',
-        datestart : '2023/11/30',
-        dateend : `2024/12/25`,
-        datachoosen : ['Node JS', 'ReactJS'],
-        datadesc : 'Hellow Guys',
-        imgData : './assets/IMG_2043.JPG',
-    },
-]
-showBlog(listProject)
-console.log(localStorage.getItem("listProject"))
+const listProject = []
+
+listProject.push(JSON.parse(localStorage.getItem("listProject")))
+console.log(listProject)
 function createProject(event){
     
     event.preventDefault();
@@ -49,12 +25,12 @@ function createProject(event){
         imgData : imageData,
     }
     listProject.push(dataInsert);
-    
+    showBlog();
     const dataProject = JSON.stringify(listProject);
     localStorage.setItem("listProject",dataProject)
-    const projectData = JSON.parse(localStorage.getItem("listProject"))
+    // const projectData = JSON.parse(localStorage.getItem("listProject"))
     
-    showBlog(projectData)
+    
     
     
 
@@ -63,9 +39,9 @@ function createProject(event){
     // a.click();
 }
 
-function showBlog(data_array){
+function showBlog(){
     let newcontent = []
-    data_array.forEach((x)=>{
+    listProject.forEach((x)=>{
         newcontent.push(`
         <div class="container-card">
             <div class="picture">
