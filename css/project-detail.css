@@ -41,10 +41,11 @@ p{
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 25px !important;
+      
     }
+
     .image-cover{
-        width: 250px;
-        padding: 25px;
+       
+        width: 140px;
     }
 }
