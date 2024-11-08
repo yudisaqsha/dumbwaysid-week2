@@ -17,12 +17,14 @@ const sequelize = new Sequelize(config[environment]);
 app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "hbs");
+app.set('views', path.join(__dirname, 'views'));
 
-app.use("/js", express.static("js"));
-app.use("/assets", express.static("assets"));
-app.use("/css", express.static("css"));
-app.use("/views", express.static("views"));
-app.use("/upload", express.static("upload"));
+
+app.use("/js", express.static(path.join(__dirname, 'js')));
+app.use("/assets", express.static(path.join(__dirname, 'assets')));
+app.use("/css", express.static(path.join(__dirname, 'css')));
+
+app.use("/upload", express.static(path.join(__dirname, 'upload')));
 
 app.use(flash());
 app.use(fileUpload());
