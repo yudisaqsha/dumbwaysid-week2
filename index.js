@@ -66,7 +66,7 @@ app.post("/register", getRegister);
 const listData = [];
 async function home(req, res) {
   const user = req.session.user;
-  const query = "select project_list.*,users.username from project_list inner join users on project_list.author_id = users.id order by id desc";
+  const query = "select project_lists.*,users.username from project_lists inner join users on project_lists.author_id = users.id order by id desc";
   let listData = await sequelize.query(query, { type: QueryTypes.SELECT });
   
   res.render("index", { listData, user });
@@ -76,10 +76,10 @@ async function project(req, res) {
   const user = req.session.user
   let listData =[]
   if(!user){
-    const query = "select project_list.*,users.username from project_list inner join users on project_list.author_id = users.id order by id desc";
+    const query = "select project_lists.*,users.username from project_lists inner join users on project_lists.author_id = users.id order by id desc";
     listData = await sequelize.query(query, { type: QueryTypes.SELECT });
   } else {
-    const query = `select project_list.*,users.username from project_list inner join users on project_list.author_id = users.id where users.id = '${user.id}' order by id desc`;
+    const query = `select project_lists.*,users.username from project_lists inner join users on project_lists.author_id = users.id where users.id = '${user.id}' order by id desc`;
     listData = await sequelize.query(query, { type: QueryTypes.SELECT });
   }
   
@@ -170,7 +170,7 @@ async function getInput(req, res) {
 
   const imagename = data_img.name;
 
-  const query = `insert into project_list(title,project_desc,selected,date_start,date_end,image_data,author_id) values ('${title}', '${desc}', '${selectbox}', '${datestart}', '${dateend}', '${imagename}' ,'${id}')`;
+  const query = `insert into project_lists(title,project_desc,selected,date_start,date_end,image_data,author_id) values ('${title}', '${desc}', '${selectbox}', '${datestart}', '${dateend}', '${imagename}' ,'${id}')`;
   await sequelize.query(query, { type: QueryTypes.INSERT });
 
   console.log(listData);
@@ -184,7 +184,7 @@ async function editData(req, res) {
     return res.redirect('/login')
   }
   const { id } = req.params;
-  const query = `select * from project_list where id=${id}`;
+  const query = `select * from project_lists where id=${id}`;
   let data_project = await sequelize.query(query, { type: QueryTypes.SELECT });
   console.log(data_project.author_id)
   console.log(user.id)
@@ -199,7 +199,7 @@ async function editData(req, res) {
 
 async function deleteData(req, res) {
   const { id } = req.params;
-  const query = `delete from project_list where id=${id}`;
+  const query = `delete from project_lists where id=${id}`;
   await sequelize.query(query, { type: QueryTypes.DELETE });
 
   res.redirect("/project");
@@ -209,7 +209,7 @@ async function showProject(req, res) {
   const user = req.session.user
 
   const { id } = req.params;
-  const query = `select project_list.*,users.username from project_list inner join users on project_list.author_id = users.id where project_list.id =${id} order by id desc`;
+  const query = `select project_lists.*,users.username from project_lists inner join users on project_lists.author_id = users.id where project_lists.id =${id} order by id desc`;
   let data_project = await sequelize.query(query, { type: QueryTypes.SELECT });
 
   res.render("project-detail", { data_project: data_project[0], user });
@@ -231,7 +231,7 @@ async function editProject(req, res) {
   data_img.mv(pathUpload);
 
   const imagename = data_img.name;
-  const query = `update project_list set title='${title}', project_desc='${desc}', selected='${selectbox}', date_start='${datestart}', date_end='${dateend}', image_data ='${imagename}' where id=${id}`;
+  const query = `update project_lists set title='${title}', project_desc='${desc}', selected='${selectbox}', date_start='${datestart}', date_end='${dateend}', image_data ='${imagename}' where id=${id}`;
   await sequelize.query(query, { type: QueryTypes.UPDATE });
   req.flash("success", "Data Berhasil diubah")
   res.redirect("/project");
