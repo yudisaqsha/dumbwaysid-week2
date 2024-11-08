@@ -12,7 +12,7 @@ const bcrypt = require("bcrypt")
 
 require("dotenv").config()
 const environment = process.env.NODE_ENV
-const sequelize = new Sequelize(config[environment], {dialectModule: require('pg')});
+const sequelize = new Sequelize(config[environment]);
 app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "hbs");
