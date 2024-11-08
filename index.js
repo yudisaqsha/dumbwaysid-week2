@@ -11,8 +11,8 @@ const session = require("express-session");
 const bcrypt = require("bcrypt")
 
 require("dotenv").config()
-// const environment = process.env.NODE_ENV
-const sequelize = new Sequelize(config.production);
+const environment = process.env.NODE_ENV
+const sequelize = new Sequelize(config[environment]);
 // const sequelize = new Sequelize(config.development);
 app.use(express.urlencoded({ extended: true }));
 
