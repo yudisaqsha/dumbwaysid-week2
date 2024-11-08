@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npx sequelize db:migrate"
+    "migrate": "sequelize db:migrate"
   },
   "author": "",
   "license": "ISC",
