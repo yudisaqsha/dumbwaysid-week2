@@ -2,7 +2,7 @@
   "name": "dumbways.id",
   "version": "1.0.0",
   "description": "\"# b58-dumbways-bootcamp\"",
-  "main": "./index.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
