@@ -138,7 +138,7 @@ async function getRegister(req, res) {
   const { username, email, password } = req.body;
   const salt = 10
   const secretPassword = await bcrypt.hash(password, salt)
-  let query = `select * from users where username = '${username}' and email = '${email}'`;
+  let query = `select * from users where username = '${username}' or email = '${email}'`;
   const usercheck = await sequelize.query(query, { type: QueryTypes.SELECT });
   if (usercheck.length > 0) {
     req.flash("error","Email / username sudah digunakan");
