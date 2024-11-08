@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   project_list.init({
-    id: DataTypes.INTEGER,
+   
     title: DataTypes.STRING,
     project_desc: DataTypes.STRING,
     selected: DataTypes.STRING,
