@@ -35,23 +35,46 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item poppins-bold">
+              <li class="nav-item ">
                 <a href="/project" class="nav-link active">
                   Project
                 </a>
               </li>
-              <li class="nav-item poppins-bold">
+              <li class="nav-item ">
                 <a href="/review" class="nav-link active">
                   Testimoni
                 </a>
               </li>
             
             </ul>
-            <div class="d-flex poppins-bold" role="search">
+            {{#if user}}
+            <div class="d-flex">
+              <h3 style="color:white; margin-right:15px">{{user.username}}</h3>
+            </div>
+            <form action="/logout" method="post" class="my-auto" style="margin-right: 15px;">
+              <button type="submit" class="btn btn-outline-danger">Logout</button></form>
+            
+          
+          {{else}}
+            <div class="d-flex">
+              <a href="/login">
+                <button class="btn poppins-bold">Login</button>
+              </a>
+
+            </div>
+            <div class="d-flex">
+              <a href="/register">
+                <button class="btn poppins-bold">Register</button>
+              </a>
+            </div>
+
+          {{/if}}
+            <div class="d-flex">
               <a href="/form">
                 <button class="btn btn-light">Contact</button>
               </a>
             </div>
+         
           </div>
         </div>
       </nav>
@@ -104,6 +127,11 @@
           </div>
       </div> -->
     </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/nav.js"></script>
     <script src="./js/review.js"></script>
   </body>

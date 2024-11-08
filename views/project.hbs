@@ -2,6 +2,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/project.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +24,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/project.css" />
+
     <title>Project</title>
   </head>
   <body>
@@ -32,7 +34,11 @@
     >
       <div class="container-fluid">
         <a href="/" class="navbar-brand">
-          <img class="image-nav" src="./assets/dw-favicon-final.png" />
+          <img
+            class="image-nav"
+            src="./assets/dw-favicon-final.png"
+            style="width: 35px;"
+          />
         </a>
         <button
           class="navbar-toggler"
@@ -47,100 +53,174 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item poppins-bold">
+            <li class="nav-item">
               <a href="/project" class="nav-link active">
                 Project
               </a>
             </li>
-            <li class="nav-item poppins-bold">
+            <li class="nav-item">
               <a href="/review" class="nav-link active">
                 Testimoni
               </a>
             </li>
 
           </ul>
-          <div class="d-flex poppins-bold" role="search">
+          <div>
+
+          </div>
+          {{#if user}}
+            <div class="d-flex">
+              <h3 style="color:white; margin-right:15px">{{user.username}}</h3>
+            </div>
+            <form
+              action="/logout"
+              method="post"
+              class="my-auto "
+              style="margin-right: 15px;"
+            >
+              <button
+                type="submit"
+                class="btn btn-outline-danger logout-btn"
+              >Logout</button></form>
+
+          {{else}}
+            <div class="d-flex">
+              <a href="/login">
+                <button class="btn poppins-bold">Login</button>
+              </a>
+
+            </div>
+            <div class="d-flex">
+              <a href="/register">
+                <button class="btn poppins-bold">Register</button>
+              </a>
+            </div>
+
+          {{/if}}
+          <div class="d-flex">
             <a href="/form">
-              <button class="btn btn-light">Contact</button>
+              <button class="btn btn-light poppins-bold">Contact</button>
             </a>
           </div>
+
         </div>
       </div>
     </nav>
+    {{#if messages.error}}
+        <div class="alert alert-danger" role="alert" style="width: 100%;">
+        {{messages.error}}
+      </div>
+      {{/if}}
+      {{#if messages.success}}
+        <div class="alert alert-success" role="alert">
+          {{messages.success}}
+        </div>
+      {{/if}}
+    {{#if user}}
+      <div class="container">
 
-    <div class="container">
-      <form method="post" action="/project" enctype="multipart/form-data">
-        <div class="poppins-bold">
-          <label class="form-label">Name :</label>
-          <input class="form-control" type="text" name="title" id="name" />
-        </div>
-        <div class="d-flex flex-column">
+        <form
+          method="post"
+          action="/project"
+          enctype="multipart/form-data"
+          class="data-insert"
+        >
           <div class="poppins-bold">
-            <label class="form-label">Date Start:</label>
-            <input class="form-control" type="date" name="datestart" />
+            <label class="form-label">Name :</label>
+            <input
+              class="form-control"
+              type="text"
+              name="title"
+              id="name"
+              required
+            />
+          </div>
+          <div class="d-flex flex-column">
+            <div class="poppins-bold">
+              <label class="form-label">Date Start:</label>
+              <input
+                class="form-control"
+                type="date"
+                name="datestart"
+                required
+              />
+            </div>
+            <div class="poppins-bold">
+              <label class="form-label">Date End:</label>
+              <input class="form-control" type="date" name="dateend" required />
+            </div>
           </div>
           <div class="poppins-bold">
-            <label class="form-label">Date End:</label>
-            <input class="form-control" type="date" name="dateend" />
+            <label>Description :</label>
+            <textarea
+              class="form-control"
+              id="project-desc"
+              name="desc"
+              required
+            ></textarea>
           </div>
-        </div>
-        <div class="poppins-bold">
-          <label>Description :</label>
-          <textarea
-            class="form-control"
-            id="project-desc"
-            name="desc"
-          ></textarea>
-        </div>
-        <div class="poppins-bold tech-list">
-          <label class="form-label">Technologies :</label>
-          <div>
-            <div style="display: flex; gap:14px">
+          <div class="poppins-bold tech-list">
+            <label class="form-label">Technologies :</label>
+            <div class="form-check">
               <input
                 type="checkbox"
                 id="node-js"
                 name="selectbox"
-                class="tech"
+                class="form-check-input"
                 value="Node JS"
               />
               <label for="node-js"> Node JS</label>
+            </div>
+            <div class="form-check">
               <input
                 type="checkbox"
                 id="next-js"
                 name="selectbox"
-                class="tech"
+                class="form-check-input"
                 value="Next JS"
               />
               <label for="next-js"> Next JS</label>
+            </div>
+            <div class="form-check">
               <input
                 type="checkbox"
                 id="react-js"
                 name="selectbox"
-                class="tech"
+                class="form-check-input"
                 value="React JS"
               />
               <label for="react-js"> React JS</label>
+            </div>
+            <div class="form-check">
               <input
                 type="checkbox"
                 id="typescript"
                 name="selectbox"
-                class="tech"
+                class="form-check-input"
                 value="TypeScript"
               />
               <label for="typescript"> TypeScript</label>
             </div>
-          </div>
-          <div style="margin-top: 10px;">
-            <input type="file" name="imageUpload" id="imageup" />
+
+            <div style="margin-top: 10px;">
+              <input
+                type="file"
+                name="imageUpload"
+                accept="image/png, image/gif, image/jpeg"
+                id="imageup"
+                required
+              />
+            </div>
+
           </div>
 
-        </div>
+          <div class="poppins-bold">
+            <button class="btn btn-dark poppins-bold" id="btn">Submit</button>
+          </div>
+        </form>
+      </div>
 
-        <div class="poppins-bold">
-          <button class="btn btn-dark poppins-bold" id="btn">Submit</button>
-        </div>
-      </form>
-    </div>
+    {{/if}}
 
     <div id="content">
       {{#each listData}}
@@ -158,28 +238,34 @@
                 date_start
                 date_end
               }}
-              days | author : Yudis Aqsha</p>
+              days | author :
+              {{username}}</p>
             <p class="textintro poppins-medium">
               {{project_desc}}
             </p>
             <p class="tech-used poppins-bold">Tech Used : {{selected}} </p>
+            {{#if ../user}}
             <div style="display: flex; flex-direction:row; gap:5px">
               <a href="/project-edit/{{id}}" name="button_edit"><button
-                class="btn-action poppins-medium"
-              >Edit</button></a>
-            <form action="/project-delete/{{id}}" method="post" style="margin-top: 0px;">
-
-              <div style="width: 50%; margin-top:0px">
-
-                <button
                   class="btn-action poppins-medium"
-                  type="submit"
-                >Delete</button>
-              </div>
+                >Edit</button></a>
+              <form
+                action="/project-delete/{{id}}"
+                method="post"
+                style="margin-top: 0px;"
+              >
 
-            </form>
+                <div style="width: 50%; margin-top:0px">
+
+                  <button
+                    class="btn-action poppins-medium"
+                    type="submit"
+                  >Delete</button>
+                </div>
+
+              </form>
             </div>
-            
+            {{/if}}
 
           </div>
         </div>

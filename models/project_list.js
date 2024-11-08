@@ -14,12 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   project_list.init({
+    id: DataTypes.INTEGER,
     title: DataTypes.STRING,
     project_desc: DataTypes.STRING,
     selected: DataTypes.STRING,
     date_start: DataTypes.DATE,
     date_end: DataTypes.DATE,
-    image_data: DataTypes.STRING
+    image_data: DataTypes.STRING,
+    author_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'project_list',

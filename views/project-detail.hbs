@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
         <div class="container-fluid">
           <a href="/" class="navbar-brand">
-            <img class="image-nav" style="width: 35px;" src="/assets/dw-favicon-final.png" />
+            <img class="image-nav" src="/assets/dw-favicon-final.png" style="width: 35px;"/>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,11 +38,34 @@
               </li>
             
             </ul>
-            <div class="d-flex poppins-bold" role="search">
-              <a href="/form">
-                <button class="btn btn-light">Contact</button>
+            {{#if user}}
+            <div class="d-flex">
+              <h3 style="color:white; margin-right:15px">{{user.username}}</h3>
+            </div>
+            <form action="/logout" method="post" class="my-auto" style="margin-right: 15px;">
+              <button type="submit" class="btn btn-outline-danger">Logout</button></form>
+            
+          
+          {{else}}
+            <div class="d-flex">
+              <a href="/login">
+                <button class="btn poppins-bold">Login</button>
+              </a>
+
+            </div>
+            <div class="d-flex">
+              <a href="/register">
+                <button class="btn poppins-bold">Register</button>
               </a>
             </div>
+
+          {{/if}}
+            <div class="d-flex">
+              <a href="/form">
+                <button class="btn btn-light poppins-bold">Contact</button>
+              </a>
+            </div>
+         
           </div>
         </div>
       </nav>
@@ -54,9 +77,11 @@
        <h4>{{data_distance
                 data_project.date_start
                 data_project.date_end
-              }} days project | Yudis Aqsha</h4>
+              }} days project | {{data_project.username}}</h4>
        <h6>Tech used : {{data_project.selected}}</h6>
         <p>{{data_project.project_desc}}</p>
       </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>

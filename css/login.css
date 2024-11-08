@@ -1,0 +1,44 @@
+.image-nav{
+    width: 35px;
+}
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 650px;
+    margin :auto; 
+    margin-top: 150px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+.login{
+    width: 490px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+body{
+    background-color: #b3b7c9;
+}
+
+@media screen and (max-width:600px){
+    .container{
+        width: 100%;
+        margin-top: 40px;
+    }
+    .login{
+        width: 80%;
+    }
+}

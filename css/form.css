@@ -134,4 +134,8 @@ form{
     form{
         width: 80%;
     }
+    .logout-btn{
+        width: 100px;
+
+    }
 }

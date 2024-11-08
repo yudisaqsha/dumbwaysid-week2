@@ -47,39 +47,11 @@ h2{
 .contact{
     background-color: black;
     color: white;
-    /* width: 100px;
-    height: 35px; */
     padding: 10px 15px;
     border-radius: 30px;
     margin-top: 40px;
 }
-/* a:link, a:visited{
-    color: white;
-} */
-/* a:hover, a:active {
-    background-color: #4b4b4b ;
-} */
-/* .container{
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    margin: auto;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px 10px #e3e1e1;
-    margin-top: 50px;
-    margin-bottom: 35px;
-    padding-bottom: 3%;
-    padding-top: 3%;
-    width: 1500px;
-    height: 800px;
-} */
 
-/* .btn{
-    background-color: black;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 30px;
-} */
 .container{
     background-color: white !important;
     border-radius: 30px;
@@ -109,9 +81,7 @@ body{
     
     margin-bottom: 2%;
 }
-ul{
-    list-style-type: none;
-}
+
 .contact-icon{
     float: left;
     margin-right: 10px;
@@ -126,8 +96,8 @@ ul{
     box-shadow: 5px 5px 5px 5px #8f9194;
     margin-top: 50px;
     margin-bottom: 35px;
-    width: 80%;
-    height: 65%;
+    
+    width: 75%;
     padding-bottom: 3%;
     padding-top: 3%;
 }
@@ -145,6 +115,10 @@ ul{
     margin-bottom: 25px;
 
     
+}
+
+ul{
+    list-style-type: none;
 }
 .image{
     width: 100%;

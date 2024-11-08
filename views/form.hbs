@@ -37,23 +37,46 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item poppins-bold">
+              <li class="nav-item ">
                 <a href="/project" class="nav-link active">
                   Project
                 </a>
               </li>
-              <li class="nav-item poppins-bold">
+              <li class="nav-item ">
                 <a href="/review" class="nav-link active">
                   Testimoni
                 </a>
               </li>
             
             </ul>
-            <div class="d-flex poppins-bold" role="search">
-              <a href="/form">
-                <button class="btn btn-light">Contact</button>
+            {{#if user}}
+            <div class="d-flex">
+              <h3 style="color:white; margin-right:15px">{{user.username}}</h3>
+            </div>
+            <form action="/logout" method="post" class="my-auto" style="margin-right: 15px;">
+              <button type="submit" class="btn btn-outline-danger logout-btn">Logout</button></form>
+            
+          
+          {{else}}
+            <div class="d-flex">
+              <a href="/login">
+                <button class="btn poppins-bold">Login</button>
+              </a>
+
+            </div>
+            <div class="d-flex">
+              <a href="/register">
+                <button class="btn poppins-bold">Register</button>
               </a>
             </div>
+
+          {{/if}}
+            <div class="d-flex">
+              <a href="/form">
+                <button class="btn btn-light ">Contact</button>
+              </a>
+            </div>
+         
           </div>
         </div>
       </nav>

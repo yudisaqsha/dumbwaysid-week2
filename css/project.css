@@ -14,7 +14,7 @@ body{
     width: 35px;
 }
 body{
-    background-color: #b3b7c9;
+    background-color: #b3b7c9 !important;
 }
 .container{
     background-color: white;
@@ -26,7 +26,7 @@ body{
     margin: auto;
     margin-top: 100px;
     margin-bottom: 100px;
-    width: 1000px;
+    width: 1000px !important;
     height: 850px;
     box-shadow: 5px 5px 5px 5px #8f9194;
 
@@ -36,7 +36,7 @@ label{
     margin-bottom: 10px;
 
 }
-form{
+.data-insert{
     margin-top: 45px;
     width: 560px;
  
@@ -97,7 +97,7 @@ textarea{
 .image{
     width: 100%;
     border-radius: 10px 10px 0px 0px;
-    height: 350px;
+   
     margin: auto;
     display: block;
 }
@@ -112,24 +112,18 @@ textarea{
 }
 .container-card{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: white;
     margin: auto;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 5px #8f9194;
     margin-top: 50px;
     margin-bottom: 35px;
-    width: 1000px;
-    height: 65%;
+    width: 550px;
     padding-bottom: 3%;
     padding-top: 3%;
 }
-h2{
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    
-}
+
 
 .btn-action{
     background-color: black;
@@ -156,10 +150,12 @@ h2{
 }
 #content{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
     margin-top: 5px;
     margin: auto;
-    width: 1000px;
+    
 }
 
 .button-list{
@@ -179,11 +175,15 @@ h2{
         display: block;
     }
     .container{
-        width: 100%;
+        width: 100% !important;
     }
-    form{
+    .data-insert{
         width: 75%;
         height: 75%;
+    }
+    .logout-btn{
+        width: 100px;
+
     }
     .date-input{
         flex-direction: column;
@@ -193,17 +193,22 @@ h2{
     } */
     .container-card{
         width: 80%;
-        height: 1000px;
+       
         flex-direction: column;
         text-wrap: wrap;
         padding-bottom: 25px;
     }
     .detail{
         text-align: center;
+        margin-top: 10px;
     }
     .picture{
         width: 80%;
         height: 25%;
+    }
+    .image{
+        width: 100%;
+        height: 100%;
     }
     #content{
         margin: auto;
@@ -212,7 +217,9 @@ h2{
     .tech-list > div > div{
       flex-wrap: wrap;
       gap: 0px;
-     
+    }
+    .textintro{
+        text-align: center;
     }
    
 }
