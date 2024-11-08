@@ -43,7 +43,10 @@ app.use(
   })
 );
 
-
+app.use((req, res, next) => {
+  res.locals.user = req.session.user || null;
+  next();
+});
 app.get("/", home);
 
 app.get("/project", project);
