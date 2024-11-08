@@ -4,9 +4,10 @@
   "description": "\"# b58-dumbways-bootcamp\"",
   "main": "./index.js",
   "scripts": {
+    "postinstall": "sequelize db:migrate",
     "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "sequelize db:migrate"
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "author": "",
   "license": "ISC",

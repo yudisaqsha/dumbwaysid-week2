@@ -4,15 +4,17 @@ const port = 3000;
 const hbs = require("hbs");
 const path = require("path");
 const fileUpload = require("express-fileupload");
-const config = require("/config/config");
+const config = require("./config/config.json");
 const { Sequelize, QueryTypes } = require("sequelize");
 const flash = require("express-flash");
 const session = require("express-session");
 const bcrypt = require("bcrypt")
 
 require("dotenv").config()
-const environment = process.env.NODE_ENV
-const sequelize = new Sequelize(config[environment]);
+// const environment = process.env.NODE_ENV
+const sequelize = new Sequelize(config.development,{
+  dialectModule:require("pg")
+});
 app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "hbs");
